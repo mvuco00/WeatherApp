@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CurrentWeather from "../CurrentWeather/CurrentWeather";
+import Search from "../Search/Search";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Trilj");
   const [input, setInput] = useState("");
 
   useEffect(() => {
@@ -27,18 +28,17 @@ const Home = () => {
   const handleCitySubmit = (e) => {
     e.preventDefault();
     setCity(input);
+    setInput("");
   };
+  console.log(data);
 
   return (
     <div className="App">
-      <form onSubmit={handleCitySubmit}>
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => handleCityChange(e)}
-        />
-        <button type="submit">SEND</button>
-      </form>
+      <Search
+        handleCityChange={handleCityChange}
+        handleCitySubmit={handleCitySubmit}
+        input={input}
+      />
       {Object.keys(data).length !== 0 ? <CurrentWeather data={data} /> : null}
     </div>
   );

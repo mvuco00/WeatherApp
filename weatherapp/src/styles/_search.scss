@@ -1,0 +1,14 @@
+.form-search {
+  margin-top: 30px;
+
+  input {
+    width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: rgba(73, 73, 151, 0.384);
+    &:focus {
+      outline: none;
+    }
+  }
+}
