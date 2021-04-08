@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CurrentWeather from "../CurrentWeather/CurrentWeather";
+import FiveDaysWeather from "../FiveDaysWeather/FiveDaysWeather";
 import Search from "../Search/Search";
 
 const Home = () => {
@@ -40,6 +41,7 @@ const Home = () => {
         input={input}
       />
       {Object.keys(data).length !== 0 ? <CurrentWeather data={data} /> : null}
+      {Object.keys(data).length !== 0 ? <FiveDaysWeather city={city} /> : null}
     </div>
   );
 };

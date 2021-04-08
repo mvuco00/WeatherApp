@@ -1,16 +1,20 @@
-.weather {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: rgb(221, 221, 221);
+@mixin flex($direction, $justify, $align) {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+.weather {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(221, 221, 221);
+  @include flex(column, space-between, center);
   padding: 20px;
 
   &-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @include flex(column, flex-start, flex-start);
+    .weather-icon-text {
+      @include flex(row, space-between, center);
+    }
   }
   &-description {
     margin: 0 0 5px 0;
@@ -29,15 +33,24 @@
     font-size: 45px;
     margin: 0;
   }
+
+  .weather-details {
+    margin-top: 40px;
+    display: flex;
+  }
 }
 
 .details-containter {
   display: flex;
+  margin: 0 35px 0 35px;
+
   .icon {
     font-size: 31px;
   }
   .data {
     &-title {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
       margin: 5px;
     }
   }

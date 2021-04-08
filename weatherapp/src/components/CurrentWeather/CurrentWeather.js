@@ -9,15 +9,18 @@ const CurrentWeather = ({ data }) => {
   return (
     <div className="weather">
       <div className="weather-info">
-        <img
-          src={`http://openweathermap.org/img/w/${data.data.weather[0].icon}.png`}
-          alt={data.data.weather[0].description}
-        />
+        <div className="weather-icon-text">
+          <img
+            src={`http://openweathermap.org/img/w/${data.data.weather[0].icon}.png`}
+            alt={data.data.weather[0].description}
+          />
+          <h4 className="weather-description">
+            {data.data.weather[0].description}
+          </h4>
+        </div>
 
         <h1 className="temperature"> {data.data.main.temp}°C</h1>
-        <h4 className="weather-description">
-          {data.data.weather[0].description}
-        </h4>
+
         <h1 className="weather-city">
           <MdLocationOn className="pin" />
           {data.data.name}, {data.data.sys.country}
