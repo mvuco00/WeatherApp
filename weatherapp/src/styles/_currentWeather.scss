@@ -3,7 +3,7 @@
   color: rgb(221, 221, 221);
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
 
   &-info {
@@ -33,4 +33,12 @@
 
 .details-containter {
   display: flex;
+  .icon {
+    font-size: 31px;
+  }
+  .data {
+    &-title {
+      margin: 5px;
+    }
+  }
 }

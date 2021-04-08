@@ -1,6 +1,9 @@
 import React from "react";
 import { MdLocationOn } from "react-icons/md";
 import { WiHumidity } from "react-icons/wi";
+import { CgCompressV } from "react-icons/cg";
+import { FiWind } from "react-icons/fi";
+import { RiTempColdLine } from "react-icons/ri";
 
 const CurrentWeather = ({ data }) => {
   return (
@@ -26,8 +29,35 @@ const CurrentWeather = ({ data }) => {
             <WiHumidity />
           </div>
           <div className="data">
-            <h4>Humidity</h4>
-            <h4>{data.data.main.humidity}</h4>
+            <h4 className="data-title">Humidity</h4>
+            <h4>{data.data.main.humidity}%</h4>
+          </div>
+        </div>
+        <div className="details-containter">
+          <div className="icon">
+            <CgCompressV />
+          </div>
+          <div className="data">
+            <h4 className="data-title">Air pressure</h4>
+            <h4>{data.data.main.pressure} PS</h4>
+          </div>
+        </div>
+        <div className="details-containter">
+          <div className="icon">
+            <FiWind />
+          </div>
+          <div className="data">
+            <h4 className="data-title">Wind speed</h4>
+            <h4>{data.data.wind.speed} km/h</h4>
+          </div>
+        </div>
+        <div className="details-containter">
+          <div className="icon">
+            <RiTempColdLine />
+          </div>
+          <div className="data">
+            <h4 className="data-title">Feels like</h4>
+            <h4>{data.data.main.feels_like} °C</h4>
           </div>
         </div>
       </div>
