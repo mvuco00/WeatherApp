@@ -1,5 +1,4 @@
 import React from "react";
-import { MdLocationOn } from "react-icons/md";
 import { WiHumidity } from "react-icons/wi";
 import { CgCompressV } from "react-icons/cg";
 import { FiWind } from "react-icons/fi";
@@ -18,13 +17,11 @@ const CurrentWeather = ({ data }) => {
             {data.data.weather[0].description}
           </h4>
         </div>
-
-        <h1 className="temperature"> {data.data.main.temp}°C</h1>
-
         <h1 className="weather-city">
-          <MdLocationOn className="pin" />
           {data.data.name}, {data.data.sys.country}
         </h1>
+
+        <h1 className="temperature"> {data.data.main.temp}°C</h1>
       </div>
       <div className="weather-details">
         <div className="details-containter">

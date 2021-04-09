@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
@@ -7,11 +8,11 @@
 .weather {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(221, 221, 221);
-  @include flex(column, space-between, center);
+  @include flex(column, center, center);
   padding: 20px;
 
   &-info {
-    @include flex(column, flex-start, flex-start);
+    @include flex(column, center, center);
     .weather-icon-text {
       @include flex(row, space-between, center);
     }
@@ -19,11 +20,12 @@
   &-description {
     margin: 0 0 5px 0;
     color: gray;
-    font-family: Arial, Helvetica, sans-serif;
   }
   &-city {
-    font-size: 30px;
-    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 25px;
+    margin: 8px 0;
 
     .pin {
       margin-right: 10px;
@@ -32,6 +34,7 @@
   .temperature {
     font-size: 45px;
     margin: 0;
+    font-family: Roboto;
   }
 
   .weather-details {
@@ -43,6 +46,7 @@
 .details-containter {
   display: flex;
   margin: 0 35px 0 35px;
+  color: rgba(255, 255, 255, 0.671);
 
   .icon {
     font-size: 31px;
