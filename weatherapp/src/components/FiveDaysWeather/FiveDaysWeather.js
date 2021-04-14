@@ -13,7 +13,7 @@ const FiveDaysWeather = ({ city }) => {
       })
       .catch((error) => console.log(error));
   }, [city]);
-  console.log(data);
+
   return <div>{city}</div>;
 };
 

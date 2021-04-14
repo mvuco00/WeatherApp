@@ -58,13 +58,13 @@ const Home = () => {
             <div className="sun-icon">
               <GiSunrise />
             </div>
-            <div>{timestamp(data.data.sys.sunrise)}</div>
+            <div className="sun-hour">{timestamp(data.data.sys.sunrise)}</div>
           </div>
           <div className="sunset">
             <div className="sun-icon">
               <GiSunset />
             </div>
-            <div>{timestamp(data.data.sys.sunset)}</div>
+            <div className="sun-hour">{timestamp(data.data.sys.sunset)}</div>
           </div>
         </div>
       )}
