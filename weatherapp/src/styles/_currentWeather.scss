@@ -11,15 +11,19 @@
   @include flex(column, center, center);
   padding: 20px;
 
+  &-icon {
+    font-size: 60px;
+  }
+
   &-info {
     @include flex(column, center, center);
     .weather-icon-text {
-      @include flex(row, space-between, center);
+      @include flex(column, space-between, center);
     }
   }
   &-description {
     margin: 0 0 5px 0;
-    color: gray;
+    color: rgb(90, 90, 90);
   }
   &-city {
     font-family: Arial, Helvetica, sans-serif;
@@ -72,5 +76,6 @@
   }
   &-icon {
     font-size: 40px;
+    color: yellow;
   }
 }
